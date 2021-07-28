@@ -1,0 +1,159 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  color: firebrick;
+  margin-top: 1em;
+}
+h2 {
+  color: steelblue;
+}
+div:not(#container) {
+  box-sizing: border-box;
+}
+ul {
+  list-style-type: square;
+}
+
+.liTitle {
+  color: steelblue;
+  font-weight: bold;
+}
+
+#contactsTable {
+  font-size: larger;
+}
+#contactsTable td, #contactsTable th {
+  border: 1px solid black;
+}
+table {
+  border-collapse: collapse;
+}
+td, th {
+  padding: 0.5em;
+}
+
+#imageOfMe {
+  width: 15vw;
+  min-width: 200px;
+}
+#sixFeetApartImage {
+  width: 400px;
+  margin-top: 2em;  /* Lines image up with h1 header */
+}
+#mathTeachingImage {
+  width: 400px;
+}
+.centerImage {
+  display: block;
+  margin: 1em auto;
+}
+.floatRight {
+  float: right;
+}
+.clearFloat {
+  clear: both;
+}
+
+#container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "logo navigation"
+    "whitespace whitespace"
+    "content content"
+    "footer footer";
+  /* Old grid template */
+  /*
+  grid-template-areas:
+    "header header"
+    "navigation content"
+    "footer footer";
+  */
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 1em auto 1.5em 1fr 2em;
+  width: 90%;
+  margin: auto;
+  overflow: auto;
+  padding: 5px;
+}
+
+/* Unused header */
+/*
+#header {
+  grid-area: header;
+  position: sticky;
+  background-image: linear-gradient(to right, #FF0000, #FFFF00, #00FF00, #00FFFF, #0000FF, #FF00FF, #FF0000);
+  margin: 0px 0px 5px 0px;
+}
+*/
+#logo {
+  grid-area: logo;
+  position: sticky;
+  font-size: x-large;
+  margin: auto auto auto 0px;
+}
+#logo a {
+  color: unset;
+  text-decoration: none;
+  padding: 5px;
+  border: 8px ridge springgreen;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+/* Removes logo border when width is 1400px or less */
+@media screen and (max-width: 1400px) {
+  #logo a {
+    border: unset;
+    padding: 5px 5px 5px 0px;
+  }
+}
+#navigation {
+  grid-area: navigation;
+  position: sticky;
+}
+/* Old navigation sidebar */
+/*
+#navigation ul {
+  font-size: large;
+  list-style-type: none;
+  padding: 0px;
+}
+*/
+
+#navigation a {
+  float: left;
+  text-align: center;
+  padding: 1.2em 0px;
+  width: 20%;
+  text-decoration: none;
+  font-size: large;
+  box-sizing: border-box;
+}
+
+/* Default color for unvisited and visited links */
+#navigation a:link, #navigation a:visited {
+  background-color: darkslategray;
+  color: white;
+}
+
+/* Color on hovered-over link */
+#navigation a:hover {
+  background-color: lightgray;
+  color: darkslategray;
+}
+
+/* Color for current page */
+#navigation a.current {
+  background-color: springgreen;
+  color: darkslategray;
+}
+
+#content {
+  grid-area: content;
+}
+#footer {
+  grid-area: footer;
+  padding: 0.5em;
+  background-color: lightsteelblue;
+}
